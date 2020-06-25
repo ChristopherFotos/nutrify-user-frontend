@@ -1,0 +1,400 @@
+body {
+  background: #2a2a2a;
+}
+
+.card-container {
+  position: relative;
+  left: 15%;
+  width: 70%;
+  /* display: grid; */
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 1rem;
+  margin: none !important;
+}
+
+.recipe-card {
+  border-radius: 30px !important;
+  /* width: 33.3%; */
+  /* margin-right: 20%; */
+  color: #a2a2a2;
+  background-color: #3b3b3b !important;
+  -webkit-box-shadow: 7px 9px 12px -7px rgba(0, 0, 0, 0.28) !important;
+  -moz-box-shadow: 7px 9px 12px -7px rgba(0, 0, 0, 0.28) !important;
+  box-shadow: 7px 9px 12px -7px rgba(0, 0, 0, 0.28) !important;
+  height: minmax(300px, 800px);
+}
+
+/* .card-col {
+  margin: 200px;
+} */
+
+.card-action {
+  border-radius: 0px 0px 10px 10px !important;
+}
+
+.recipe-img {
+  width: 100%;
+  border-radius: 200px !important;
+}
+
+.app-container {
+  width: 70%;
+  position: absolute;
+  left: 15%;
+}
+
+@media only screen and (max-width: 1200px) {
+  .app-container {
+    width: 100%;
+    margin: none;
+    left: 0;
+    overflow-x: hidden;
+  }
+}
+
+.recipe-details {
+  margin: 10px;
+  padding: 4%;
+}
+
+.card-link {
+  color: #1ee56b !important;
+  font-family: arial;
+}
+
+.search-form {
+  width: 70%;
+  position: relative;
+  left: 15%;
+}
+
+.search-bar {
+  border: 2px solid #1ee56b !important;
+  border-radius: 100px !important;
+  padding-left: 20px !important;
+  color: #c9c9c9;
+  width: 100%;
+}
+
+.search-button {
+  background-color: #1ee56b !important;
+  display: inline-block;
+}
+
+input:focus {
+  border-bottom: 2px solid #1ee56b !important;
+  box-shadow: none !important;
+  background-color: #fff;
+}
+
+.recipe-name {
+  color: #1ee56b !important;
+  font-family: arial;
+  font-weight: bold !important;
+  font-size: 2.4rem !important;
+  padding: 4%;
+}
+
+.logo {
+  width: 150px;
+  position: relative;
+  top: 10px;
+  margin-bottom: 10px;
+  display: inline-block;
+}
+
+.search-summary-p {
+  position: relative;
+  width: 70%;
+  /* left: 15%; */
+  color: #909090;
+  margin-bottom: 4%;
+}
+
+.search-summary-div {
+}
+
+.subline {
+  color: #1ee56b;
+}
+
+.search-options-label {
+  /* position: absolute; */
+  color: #a0a0a0;
+  cursor: pointer;
+
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+#search-options-expand {
+  /* border: 2px solid #1ee56b; */
+  /* background-color: #2a2a2a;
+  height: 0;
+  border-radius: 16px;
+  padding-left: 2%;
+  color: #a0a0a0;
+  top: 20%;
+  width: 102%;
+  z-index: -1; */
+}
+
+.search-flexbox-span {
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 2%;
+}
+
+.center-p {
+  order: 2;
+}
+
+.flex-align-bottom {
+  align-items: flex-end;
+}
+
+#option-input-1 {
+  color: #c9c9c9 !important;
+  width: 20%;
+  display: inline !important;
+  white-space: nowrap;
+  margin-right: 1%;
+}
+
+#option-input-2 {
+  color: #c9c9c9 !important;
+  width: 20%;
+  display: inline !important;
+  white-space: nowrap;
+  margin-left: 1%;
+}
+
+/* inspect the materialize css code to see how they've achieved this effect. maybe I could do something similar but have the 
+checkbox transform into something approximating the shape in the logo. */
+[type="checkbox"]:checked + span:not(.lever):before {
+  border-right: 2px solid #1ee56b !important;
+  border-bottom: 2px solid #1ee56b !important;
+}
+
+.diet-label {
+  margin-right: 5% !important;
+}
+
+.search-options-heading {
+  color: #1ee56b;
+  font-weight: bold;
+}
+
+/* dropdown animation transition classes */
+
+.search-dropdown-closed {
+  height: 0 !important;
+  transition: all 0.5s ease;
+  border: 2px solid #1ee56b;
+  opacity: 0;
+  border-radius: 10px;
+}
+
+.search-dropdown-open {
+  display: block;
+  height: 320px;
+  border: 2px solid #1ee56b;
+  transition: all 0.5s ease;
+  padding: 2%;
+  border-radius: 10px;
+}
+
+.search-option-heading-closed {
+  display: none;
+  opacity: 0;
+  transition: all 0.5s ease;
+}
+
+.search-option-heading-open {
+  font-size: 1rem;
+  font-weight: bold;
+  color: #1ee56b;
+  display: block;
+  opacity: 1;
+  transition: all 0.5s ease;
+}
+
+.search-option-checkbox-closed {
+  opacity: 0;
+  transition: all 0.5s ease;
+}
+
+.search-option-checkbox-open {
+  display: block;
+  opacity: 1;
+  transition: all 0.5s ease;
+}
+
+/* *********************** NEW CARD CSS BEGINS****************************** */
+
+::-webkit-scrollbar {
+  width: 3px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+  margin-right: 30px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #1ee56b;
+  border-radius: 100px;
+}
+
+.grid-card {
+  /* background: #3b3b3b; */
+  border-radius: 10px;
+  padding-top: 4px;
+  vertical-align: top;
+  height: 100%;
+  display: inline-block;
+  width: 46%;
+  margin: 1rem;
+}
+
+@media only screen and (max-width: 1838px) {
+  .grid-card {
+    width: 42%;
+  }
+}
+
+@media only screen and (max-width: 1220px) {
+  .grid-card {
+    width: 90%;
+  }
+}
+
+.card-img {
+  width: 100%;
+  height: 30vh;
+  object-fit: cover;
+  border-radius: 1%;
+}
+
+.recipe-title {
+  display: block;
+  font-size: 2rem;
+  font-weight: bold;
+  color: #1ee56b;
+  font-family: arial;
+  /* padding: 3%; */
+}
+
+.show-details {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  font-size: 0.76rem;
+  line-height: 2.5rem;
+}
+
+.ingredient-card-tag::after {
+  content: " ingredients";
+  font-size: 0.76rem;
+  line-height: 2.5rem;
+}
+
+.nutrition-card-tag::after {
+  content: " nutrition info";
+  font-size: 0.76rem;
+  line-height: 2.5rem;
+}
+
+.show-details::before {
+  content: "";
+  margin-left: 4px;
+  margin-right: 3%;
+  margin-bottom: 4px;
+  text-align: center;
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  border-bottom: 2px solid #1ee56b;
+  border-right: 2px solid #1ee56b;
+  transform: rotate(45deg);
+  transition: all 0.4s ease-in-out;
+}
+
+.show-details:hover::before {
+  content: "";
+  margin-left: 20px;
+  margin-right: 5px;
+  margin-bottom: 2px;
+  text-align: center;
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  border-bottom: 2px solid #1ee56b;
+  border-right: 2px solid #1ee56b;
+  background-color: #1ee56b;
+  transform: rotate(405deg);
+  transition: all 0.4s ease-in-out;
+}
+
+.show-details:hover {
+  cursor: pointer;
+}
+
+.recipe-summary-div {
+  border-top: 1px solid rgba(190, 190, 190, 0.15);
+  color: #a2a2a2;
+  font-family: arial;
+  font-size: 0.74rem;
+  padding-top: 2%;
+  margin-bottom: 15px;
+}
+
+.show-details {
+  /* padding: 3%; */
+  font-family: Arial;
+  color: #a2a2a2;
+}
+
+.ingredient-li {
+  display: none;
+}
+
+.card-open {
+  height: 280px;
+}
+
+.card-content-open {
+  height: 200px;
+  opacity: 1;
+  padding-left: 3%;
+  color: #a2a2a2;
+  font-family: arial;
+  transition: all 0.4s ease;
+  overflow-y: scroll;
+}
+
+@media only screen and (max-width: 400px) {
+  .card-content-open {
+    height: 90vh;
+  }
+
+  .card-open {
+    height: 95vh;
+  }
+}
+
+.card-content-closed {
+  height: 0;
+  /* display: none; */
+  opacity: 0;
+  transition: all 0.4s ease;
+}
+
+/* *********************** NEW CARD CSS ENDS****************************** */
