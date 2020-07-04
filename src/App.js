@@ -51,7 +51,7 @@ const App = () => {
     fetchData()
 
   }
-  ))
+  ), [])
 
   console.log("Outside of UE callback:", recipes)
 

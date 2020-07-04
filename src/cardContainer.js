@@ -8,9 +8,12 @@ import RecipeCard from "./recipeCard";
 const CardContainer = (props) => {
   useEffect(() => {
     let targets = document.querySelectorAll(".show-details");
+    console.log("TARGETS EL: ", targets)
 
     targets.forEach((elem) => {
+      console.log('adding event listeners')
       elem.addEventListener("click", (e) => {
+        console.log("OPEN EVENT FIRING")
         if (!e.target.expanded) {
           //Checks if the div is collpased and opens it
           e.target.expanded = true;
@@ -27,6 +30,7 @@ const CardContainer = (props) => {
           e.target.parentElement.classList.remove("card-closed");
           e.target.parentElement.classList.add("card-open");
         } else if (e.target.expanded) {
+          console.log("CLOSE EVENT FIRING")
           //Checks if the div is open and collapses it
           e.target.expanded = false;
           e.target.innerText = "Show";
