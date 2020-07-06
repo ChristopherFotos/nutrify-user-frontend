@@ -1,19 +1,22 @@
 import React, { Component, useState, useEffect } from "react";
-// import SearchBar from "./searchComponent";
-// import SearchSummary from "./searchSummary";
 import "./materialize.css";
 import CardContainer from "./cardContainer";
 
+
 const App = () => {
   const [recipes, setRecipes] = useState([]);
-  // This hook sends a fetch request to the verify route with localStorage.token as the authorization header.
-  // if the user is not logged in then localStorage.token will have no value, and verification will fail. In this
-  // event, the user is redirected to the login page.
+  const [fullRecipes, setfullRecipes] = useState([]);
+
   let recipesToRender = "INITIAL VALUE";
   console.log("initial value: ", recipesToRender)
 
-  useEffect((() => {
+  // The following useEffect hook sends a fetch request to the 
+  //'verify' route with localStorage.token as the authorization header.
+  // if the user is not logged in then localStorage.token will have 
+  // no value, and verification will fail. In this event, the user 
+  // is redirected to the login page.
 
+  useEffect((() => {
     async function fetchData() {
       const res = await fetch('http://localhost:3000/user/verify', {
         method: 'POST',
@@ -29,7 +32,7 @@ const App = () => {
 
       if (JSONresponse.message === "Authentication failed") {
         console.log(JSONresponse)
-        console.log("this is running")
+        console.log("Auth failed")
         // window.location.replace('http://localhost:3000/login')
       } else {
         const requestedRecipes = await fetch('http://localhost:3000/user/recipes', {
@@ -49,11 +52,10 @@ const App = () => {
     }
 
     fetchData()
-
   }
   ), [])
 
-  console.log("Outside of UE callback:", recipes)
+  console.log("Outside of UE callback:", recipes, " ", fullRecipes)
 
 
   return (

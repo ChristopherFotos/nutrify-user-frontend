@@ -19,12 +19,10 @@ const RecipeCard = (props) => {
         'Authorization': 'Bearer ' + localStorage.token,
       },
       body: JSON.stringify({
-        id: props.recipe,
+        id: props.recipe, // this will have to change when we move this function to the App component
       })
     }
     )
-
-
 
     let recipeJSON = await recipe.json()
     setRecipe(recipeJSON)
@@ -32,6 +30,9 @@ const RecipeCard = (props) => {
 
 
   useEffect(() => { getData() }, [])
+  useEffect(() => {
+    props.addEvents();
+  })
 
   console.log('RECIPE CARD RECIPE VALUE: ', recipe)
 
