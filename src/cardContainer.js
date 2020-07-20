@@ -8,6 +8,10 @@ import RecipeCard from "./recipeCard";
 const CardContainer = (props) => {
   const [fullRecipes, setfullRecipes] = useState([])
 
+  useEffect(() => {
+    console.log('PROPS IN CARDCONTAINER', props)
+  })
+
   function addEvents() {
 
     let targets = document.querySelectorAll(".show-details");
@@ -63,13 +67,16 @@ const CardContainer = (props) => {
   }
 
 
-  return (
-    <div className="card-container">
-      {props.recipes.map((recipe) => {
-        return <RecipeCard recipe={recipe} addEvents={addEvents}></RecipeCard>;
-      })}
-    </div>
-  );
+  if (props.recipes.length > 0) {
+    return (
+      <div className="card-container">
+        <h3 className="dashboard-heading">Saved recipes</h3>
+        {props.recipes.map((recipe) => {
+          return <RecipeCard recipe={recipe} addEvents={addEvents}></RecipeCard>;
+        })}
+      </div>
+    );
+  } else { return null }
 };
 
 export default CardContainer;

@@ -397,4 +397,89 @@ checkbox transform into something approximating the shape in the logo. */
   transition: all 0.4s ease;
 }
 
-/* *********************** NEW CARD CSS ENDS****************************** */
+/* *********************** NAVBAR ****************************** */
+
+.navbar { 
+  position: relative;
+  left: 15%;
+  width: 70%;
+  height: 5vh;
+  text-align: right;
+  padding-right: 3%;
+  padding-top:2.3em;
+  color: rgb(155, 155, 155);
+  font-size: 17px;
+}
+
+.navbar-button {
+  position: relative;
+  z-index: 1;
+  padding-right: 0.8%;
+  padding-left: 0.8%;
+  padding-top: 0;
+  -webkit-touch-callout: none; 
+    -webkit-user-select: none; 
+     -khtml-user-select: none; 
+       -moz-user-select: none; 
+        -ms-user-select: none; 
+            user-select: none;
+  transition: all 0.25s
+}
+
+.navbar-button:hover {
+  cursor: pointer;
+  /* color: #1ee56b; */
+  border-left: 2px solid #1ee56b;
+  padding-bottom: 2em;
+  color: rgb(202, 202, 202);
+}
+
+/* Login dropdown */
+.login-dropdown {
+  width: 15%;
+  position: relative;
+  left: 85%;
+  z-index: 999999;
+  background-color: #1d1d1d;
+  border-radius: 2%;
+  padding: 2%;
+  padding-right: 4%; 
+  margin-top: 3%;
+}
+
+.login-button{
+  -webkit-touch-callout: none; 
+    -webkit-user-select: none; 
+     -khtml-user-select: none; 
+       -moz-user-select: none; 
+        -ms-user-select: none; 
+            user-select: none;
+  font-weight: bold;
+  padding-left: 2%
+}
+
+.login-button:hover{
+  cursor: pointer;
+  color: rgb(202, 202, 202);
+  transition: all 0.25s;
+}
+
+#dashboard-button, #dashboard-button:visited {
+  color: rgb(155, 155, 155) !important;
+}
+
+#dashboard-button:hover{
+  cursor: pointer;
+  border-left: 2px solid #1ee56b;
+  padding-bottom: 2em;
+  color: rgb(202, 202, 202);
+  transition: all 0.25s;
+}
+
+/* DASHBOARD-SPECIFIC RULESETS*/
+
+.dashboard-heading{
+  color: rgb(202, 202, 202);
+  font-weight: bold;
+  padding-left: 0.4em;
+}

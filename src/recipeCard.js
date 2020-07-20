@@ -15,9 +15,9 @@ const RecipeCard = (props) => {
       method: 'POST',
       mode: 'cors',
       headers: {
-        'Content-Type': 'application/json',
-        'Authorization': 'Bearer ' + localStorage.token,
+        'Content-Type': 'application/json'
       },
+      credentials: 'include',
       body: JSON.stringify({
         id: props.recipe, // this will have to change when we move this function to the App component
       })
@@ -43,7 +43,7 @@ const RecipeCard = (props) => {
     return (
       <div className="grid-card">
         <img
-          src="https://source.unsplash.com/random"
+          src={recipe.recipe[0].img}
           className="card-img"
           alt="the finished product"
         />

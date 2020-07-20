@@ -23,7 +23,8 @@ const App = () => {
         mode: 'cors',
         headers: {
           'Authorization': 'Bearer ' + localStorage.token
-        }
+        },
+        credentials: 'include'
       }
       )
 
@@ -33,15 +34,15 @@ const App = () => {
       if (JSONresponse.message === "Authentication failed") {
         console.log(JSONresponse)
         console.log("Auth failed")
-        // window.location.replace('http://localhost:3000/login')
+        window.location.replace('http://localhost:5000/')
       } else {
         const requestedRecipes = await fetch('http://localhost:3000/user/recipes', {
           method: 'POST',
           mode: 'cors',
           headers: {
             'Content-Type': 'application/json',
-            'Authorization': 'Bearer ' + localStorage.token,
           },
+          credentials: 'include'
         }
         )
 
@@ -55,12 +56,32 @@ const App = () => {
   }
   ), [])
 
-  console.log("Outside of UE callback:", recipes, " ", fullRecipes)
-
+  const logout = async () => {
+    let res = await fetch('http://localhost:3000/user/logout',
+      {
+        method: 'GET',
+        mode: 'cors',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        credentials: 'include'
+      }
+    )
+    console.log(res)
+    if (res.status === 200) {
+      window.location.replace('http://localhost:5000')
+    }
+  }
 
   return (
     <React.Fragment>
       <div className="app-container">
+        <div className="navbar">
+          <div className="navbar-button-container" id='guest-navbar'>
+            <a href="http://localhost:5000/" className="navbar-button" id="dashboard-button">home</a>
+            <span className="navbar-button" id="login-button" onClick={logout}>logout</span>
+          </div>
+        </div>
         <CardContainer recipes={recipes}></CardContainer>
       </div>
     </React.Fragment>
