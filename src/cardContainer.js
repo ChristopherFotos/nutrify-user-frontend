@@ -76,7 +76,14 @@ const CardContainer = (props) => {
         })}
       </div>
     );
-  } else { return null }
+  } else {
+    return (
+      <div className="card-container">
+        <h4 className="dashboard-heading">Hungry? Save recipes and find them here later! </h4>
+        <p id="how-to-p">Go to the home page and search for a recipe by name or ingredients. Click 'Save' when you find one you like, then you can come back here and find it later. </p>
+      </div>
+    )
+  }
 };
 
 export default CardContainer;
