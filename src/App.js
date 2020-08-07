@@ -18,7 +18,7 @@ const App = () => {
 
   useEffect((() => {
     async function fetchData() {
-      const res = await fetch('http://localhost:3000/user/verify', {
+      const res = await fetch('/user/verify', {
         method: 'POST',
         mode: 'cors',
         headers: {
@@ -34,9 +34,9 @@ const App = () => {
       if (JSONresponse.message === "Authentication failed") {
         console.log(JSONresponse)
         console.log("Auth failed")
-        window.location.replace('http://localhost:5000/')
+        window.location.replace('/')
       } else {
-        const requestedRecipes = await fetch('http://localhost:3000/user/recipes', {
+        const requestedRecipes = await fetch('/user/recipes', {
           method: 'POST',
           mode: 'cors',
           headers: {
@@ -57,7 +57,7 @@ const App = () => {
   ), [])
 
   const logout = async () => {
-    let res = await fetch('http://localhost:3000/user/logout',
+    let res = await fetch('/user/logout',
       {
         method: 'GET',
         mode: 'cors',
@@ -69,7 +69,7 @@ const App = () => {
     )
     console.log(res)
     if (res.status === 200) {
-      window.location.replace('http://localhost:5000')
+      window.location.replace('/')
     }
   }
 
@@ -78,7 +78,7 @@ const App = () => {
       <div className="app-container">
         <div className="navbar">
           <div className="navbar-button-container" id='guest-navbar'>
-            <a href="http://localhost:5000/" className="navbar-button" id="dashboard-button">home</a>
+            <a href="/" className="navbar-button" id="dashboard-button">home</a>
             <span className="navbar-button" id="login-button" onClick={logout}>logout</span>
           </div>
         </div>
